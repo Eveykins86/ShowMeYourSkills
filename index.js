@@ -22,7 +22,7 @@ let quizQuestions = [
         correctAnswer: 2,
     },
     {
-        question: "A very useful tool used during development and debugging for printing content to the debbuer is:",
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
         choices: ["JavaScript", "Terminal/Bash", "For Loops", "Console.log"],
         correctAnswer: 3,
     }
@@ -102,9 +102,19 @@ function checkSelectedAnswer() {
 
 //Function to show the final score
 function showFinalScore() {
-    choices.style.display = "none";
-    var quizContainer = document.getElementById("question");
-    quizContainer.innerHTML = "<p>Your Score: " + score + "/" + quizQuestions.length + "!" + "</p>";
+    //choices.style.display = "none";
+    var questionElement = document.getElementById("question");
+    var choicesElement = document.getElementById("choices");
+
+    questionElement.textContent = "";
+    choicesElement.innerHTML = "";
+
+    var finalScore = timeLeft;
+    var showFinalScoreElement = document.createElement("p");
+    //var quizContainer = document.getElementById("question");
+    showFinalScoreElement.textContent = "Your Score: " + finalScore + "!";
+    showFinalScoreElement.id = "final-score";
+    document.body.appendChild(showFinalScoreElement);
 }
 
 startButton.addEventListener("click", () => {
