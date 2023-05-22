@@ -1,0 +1,49 @@
+/* CSS for the High Score and timer*/
+#timer {
+    text-align: right;
+    color: red;
+}
+
+/* CSS for the quiz and question container*/
+#cq, #quiz-container, #question-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 500px
+}
+
+/* CSS for the start button */
+#start-button {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #582980;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* CSS for the question */
+  #question {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  /* CSS for the answer choices */
+  #choices {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #choices li {
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  #choices li:hover {
+    background-color: #f2f2f2;
+  }
+  
