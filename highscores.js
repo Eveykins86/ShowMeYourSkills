@@ -1,5 +1,7 @@
-//New game button variable
+//Button variables
 var newGameButton = document.getElementById("highscorebtn")
+var clearScoresButton = document.getElementById("clearhs")
+var highScoresTable = document.getElementById("high-scores-table")
 
 // Retrieve the stored player initials and high score from local storage
 var playerInitials = localStorage.getItem("playerInitials");
@@ -45,3 +47,10 @@ localStorage.setItem("highScores", JSON.stringify(highScores));
 newGameButton.addEventListener("click", () => {
     window.location.href = "index.html"
 });
+
+//Clear High Scores Button
+clearScoresButton.addEventListener("click", () => {
+    localStorage.removeItem("playerInitials");
+    localStorage.removeItem("highScores");
+    highScoresTable.innerHTML = "<tr><th>Player Initials</th><th>Score</th></tr>";
+})

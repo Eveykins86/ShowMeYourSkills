@@ -78,7 +78,9 @@ header {
     color: #0dd521;
   }
   
-  #highscorebtn {
+/*CSS for High Scores Buttons*/
+
+  #highscorebtn, #clearhs {
     margin: 0 auto;
     max-width: 500px;
     padding: 5px 10px;
