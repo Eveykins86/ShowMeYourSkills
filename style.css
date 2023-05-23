@@ -1,8 +1,22 @@
-/* CSS for the High Score and timer*/
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CSS for the timer*/
 #timer {
+    display: inline;
     text-align: right;
     color: red;
 }
+
+/*CSS for the High Scores*/
+#highscores {
+    display: inline;
+    text-align: left;
+    color: blue;
+}
+
 
 /* CSS for the quiz and question container*/
 #cq, #quiz-container, #question-container {
@@ -55,4 +69,22 @@
     margin-bottom: 10px;
     color: black;
   }
+
+  #hsheadder {
+    color: crimson;
+  }
+
+  th {
+    color: #0dd521;
+  }
   
+  #highscorebtn {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #582980;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }

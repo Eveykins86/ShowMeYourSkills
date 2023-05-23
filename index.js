@@ -42,22 +42,18 @@ var score = 0;
 //Function to start game
 function startGame() {
     startButton.style.display = "none";
-    var gameInterval = setInterval(() => {
-        timerSpan.textContent = timeLeft--;
-
-        if(!timeLeft) {
-        // Stops execution of action at set interval
-            clearInterval(gameInterval);
-            showFinalScore();
-    }
-    
-}, 1000);
-}
+    timerSpan.textContent = "Time Remaining: " + timeLeft + " seconds";
+    gameInterval = setInterval(function() {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(gameInterval);
+        showFinalScore();
+      }
+    }, 1000);
+  }
 
 //Function to display the current question and choices
 function displayQuestion() {
-    clearInterval(gameInterval);
-    timerSpan = 75;
     timerElement.textContent = "Time Remaining: " + timeLeft + " seconds";
     var questionElement = document.getElementById("question");
     var choicesElement = document.getElementById("choices");
@@ -82,39 +78,54 @@ function checkSelectedAnswer() {
     
     if (selectedOption === quizQuestions[currentQuestion].correctAnswer) {
       score++;
-      alert("CORRECT!") 
+      this.textContent = "CORRECT!";
+      this.classList.remove("wrong");
+      this.classList.add("correct");
     } else {
-        timeLeft -= 10;
-        if (timeLeft < 0) {
-            timeLeft = 0;
-        }
-        alert("WRONG!")
-
-    }//Move to the next question or show the final score
-    if (currentQuestion < quizQuestions.length - 1) {
-    currentQuestion++;
-    displayQuestion();
-    } else {
-    clearInterval(gameInterval);
-    showFinalScore();
+      this.textContent = "WRONG!";
+      this.classList.remove("correct");
+      this.classList.add("wrong");
+      timeLeft -= 10;
+      if (timeLeft < 0) {
+        timeLeft = 0;
+      }
     }
-}
+
+//Move to the next question or show the final score
+
+    currentQuestion++;
+
+    if (currentQuestion < quizQuestions.length) {
+        setTimeout(displayQuestion, 1000);
+    } else {
+      clearInterval(gameInterval);
+      showFinalScore();
+    }
+  }
 
 //Function to show the final score
 function showFinalScore() {
-    //choices.style.display = "none";
     var questionElement = document.getElementById("question");
     var choicesElement = document.getElementById("choices");
+
+    var finalScore = timeLeft;
+    var showFinalScoreElement = document.createElement("p");
+    showFinalScoreElement.textContent = "Your Score: " + finalScore + "!";
+    showFinalScoreElement.id = "final-score";
+    document.body.appendChild(showFinalScoreElement);
 
     questionElement.textContent = "";
     choicesElement.innerHTML = "";
 
-    var finalScore = timeLeft;
-    var showFinalScoreElement = document.createElement("p");
-    //var quizContainer = document.getElementById("question");
-    showFinalScoreElement.textContent = "Your Score: " + finalScore + "!";
-    showFinalScoreElement.id = "final-score";
-    document.body.appendChild(showFinalScoreElement);
+//Promt player to enter initals
+    alert("Your Score: " + finalScore +"!");
+    var playerInitials = prompt("Enter your initials:");
+
+//Store the plyer initals and high score in local storage
+    localStorage.setItem("playerInitials", playerInitials);
+    localStorage.setItem("highScore", finalScore);
+    window.location.href = "highscores.html";
+
 }
 
 startButton.addEventListener("click", () => {
@@ -123,4 +134,4 @@ startButton.addEventListener("click", () => {
 })
 
         // Calls function to store player and score
-        //window.location.href = "highscore.html";
+        //
