@@ -11,7 +11,7 @@ Built a coding quiz from scratch using knowledge obtained from class as well as 
 
 ## Links
 
-GitHub: (https://github.com/Eveykins86ShowMeYourSkills)
+GitHub: (https://github.com/Eveykins86/ShowMeYourSkills)
 
 Website: (https://eveykins86.github.io/ShowMeYourSkills/)
 
