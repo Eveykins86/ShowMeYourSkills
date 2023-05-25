@@ -1,7 +1,7 @@
 //Button variables
-var newGameButton = document.getElementById("highscorebtn")
-var clearScoresButton = document.getElementById("clearhs")
-var highScoresTable = document.getElementById("high-scores-table")
+var newGameButton = document.getElementById("highscorebtn");
+var clearScoresButton = document.getElementById("clearhs");
+var highScoresTable = document.getElementById("high-scores-table");
 
 // Retrieve the stored player initials and high score from local storage
 var playerInitials = localStorage.getItem("playerInitials");
@@ -30,7 +30,7 @@ highScores.sort(function(a, b) {
 highScores = highScores.slice(0, 5);
 
 // Update the high scores table
-var tableBody = document.getElementById("high-scores-table").getElementsByTagName("tbody")[0];
+var tableBody = highScoresTable.getElementsByTagName("tbody")[0];
 
 for (var i in highScores) {
     var row = tableBody.appendChild(document.createElement("tr"));
@@ -44,7 +44,7 @@ for (var i in highScores) {
 localStorage.setItem("highScores", JSON.stringify(highScores));
 
 //Return to Game button
-newGameButton.addEventListener("click", () => {
+newGameButton.addEventListener("click", function() {
     window.location.href = "index.html"
 });
 

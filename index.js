@@ -31,8 +31,8 @@ let quizQuestions = [
 //Variables
 var startButton = document.getElementById("start-button");
 var timerSpan = document.getElementById("time-left");
-var timerElement = document.getElementById("timer")
-var timeLeft = 75
+var timerElement = document.getElementById("timer");
+var timeLeft = 75;
 var gameInterval;
 
 //Track current question and user's score
@@ -42,9 +42,9 @@ var score = 0;
 //Function to start game
 function startGame() {
     startButton.style.display = "none";
-    timerSpan.textContent = "Time Remaining: " + timeLeft + " seconds";
     gameInterval = setInterval(function() {
       timeLeft--;
+      timerElement.textContent = "Time Remaining: " + timeLeft + " seconds";
       if (timeLeft <= 0) {
         clearInterval(gameInterval);
         showFinalScore();
@@ -54,7 +54,6 @@ function startGame() {
 
 //Function to display the current question and choices
 function displayQuestion() {
-    timerElement.textContent = "Time Remaining: " + timeLeft + " seconds";
     var questionElement = document.getElementById("question");
     var choicesElement = document.getElementById("choices");
 
@@ -128,10 +127,7 @@ function showFinalScore() {
 
 }
 
-startButton.addEventListener("click", () => {
+startButton.addEventListener("click", function() {
     startGame();
     displayQuestion();
 })
-
-        // Calls function to store player and score
-        //
