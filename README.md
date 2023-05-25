@@ -1,13 +1,13 @@
 # ShowMeYourSkills
 
 ## Description
-Built on provided starter code to develop a secure password generator. This password generator has the flexability to include or exclude character types in the password generation process. The user is able to enter a password length and choose to include or exclude certain characters. The end product provides a joined string of characters the user can then copy.
+Built a coding quiz from scratch using knowledge obtained from class as well as Google and YouTube searches. The quiz is customizable to include additional questions in the future. It alerts the user with "CORRECT!" when a correct answer is selected and "WRONG!" when an incorrect answer is selected. It has a timer with 75 seconds to start and will deduct 10 seconds for every wrong answer. Once the quiz is completed or the timer reaches "0" the user is given their final score and prompted to enter their initials. Then they are directed to a "High Scores" page and a list of the top five scores is displayed. The user then can choose to clear the high scores or return to the game.
 
 ## Website Preview
 
 [EasyPass](https://eveykins86.github.io/ShowMeYourSkills/)
 
-[![name](assets/imgs/Screenshot%202023-05-18%20141328.png)](https://eveykins86.github.io/ShowMeYourSkills/)
+[![Video clip of webpage functioning](./assets/ShowME.gif)]
 
 ## Links
 
