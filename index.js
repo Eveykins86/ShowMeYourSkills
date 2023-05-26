@@ -91,7 +91,6 @@ function checkSelectedAnswer() {
     }
 
 //Move to the next question or show the final score
-
     currentQuestion++;
 
     if (currentQuestion < quizQuestions.length) {
@@ -119,6 +118,9 @@ function showFinalScore() {
 //Promt player to enter initals
     alert("Your Score: " + finalScore +"!");
     var playerInitials = prompt("Enter your initials:");
+    if (finalScore <= 45) {alert("Nice Try! Keep Studying!");
+    }
+    else alert("WOW! That was AMAZING!!")
 
 //Store the plyer initals and high score in local storage
     localStorage.setItem("playerInitials", playerInitials);
@@ -130,4 +132,5 @@ function showFinalScore() {
 startButton.addEventListener("click", function() {
     startGame();
     displayQuestion();
+    alert("Wrong answers will deduct 10 seconds from the clock. Score is based on how much time you have left. Are you ready?")
 })
