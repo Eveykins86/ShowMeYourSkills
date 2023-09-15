@@ -555,6 +555,7 @@ function checkSelectedAnswer() {
       this.textContent = "CORRECT!";
       this.classList.remove("wrong");
       this.classList.add("correct");
+      timeLeft += 10;
     } else {
       this.textContent = "WRONG!";
       this.classList.remove("correct");
@@ -607,5 +608,5 @@ function showFinalScore() {
 startButton.addEventListener("click", function() {
     startGame();
     displayQuestion();
-    alert("Wrong answers will deduct 10 seconds from the clock. Score is based on how much time you have left. Are you ready?")
+    alert("Wrong answers will deduct 10 seconds from the clock. Correct answers will add 10 seconds to the clock. Score is based on how much time you have left. Are you ready?")
 })
