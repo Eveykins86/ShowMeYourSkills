@@ -524,7 +524,7 @@ function startGame() {
   // Clear the previous interval if any
   clearInterval(gameInterval);
 
-  timeLeft = 20;
+  timeLeft = 30;
   function updateTimer() {
     timeLeft--;
     timerElement.textContent = "Time Remaining: " + timeLeft + " seconds";
@@ -551,8 +551,8 @@ gameInterval = setInterval(updateTimer, 1000);
 
 // Function to display the current question and choices
 function displayQuestion() {
-  // Reset the timer to 20 seconds when displaying a new question
-  timeLeft = 20;
+  // Reset the timer to 30 seconds when displaying a new question
+  timeLeft = 30;
   var questionElement = document.getElementById("question");
   var choicesElement = document.getElementById("choices");
 
